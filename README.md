@@ -37,6 +37,15 @@ or, where the Store is not available, the portable app:
 `UARTist\UARTist.exe`. It is not signed, so the first time choose *More info
 → Run anyway*. It does not update itself.
 
+## Teach Claude Code to use UARTist
+
+```sh
+npx https://uartist.app/claude-skill/ install --global   # or --local, for one project
+```
+
+installs a Claude Code skill — how to install UARTist, its command line and
+its MCP server, and what to ask you first — at the same version as the app.
+
 ## Each release has
 
 | File | |
@@ -47,6 +56,7 @@ or, where the Store is not available, the portable app:
 | `UARTist-windows-x64.zip`, `UARTist-windows-x64.zip.sha256` | the same zip under a name that does not change, and its SHA-256 |
 | `install-mac.sh` | the one-line installer |
 | `THIRD_PARTY_NOTICES.md` | the open-source components inside the app, and their licenses |
+| `uartist-skill.tgz`, `uartist-claude-skill.zip` | the Claude Code skill for this version (npx package, or the folder to unzip) |
 
 ## Problems, questions, ideas
 
