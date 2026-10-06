@@ -40,11 +40,16 @@ or, where the Store is not available, the portable app:
 ## Teach Claude Code to use UARTist
 
 ```sh
-npx https://uartist.app/claude-skill/ install --global   # or --local, for one project
+npx --allow-remote=all https://uartist.app/claude-skill/ install --global   # or --local, for one project
+uartist skill install                                                       # or, with UARTist installed: no Node needed
 ```
 
 installs a Claude Code skill — how to install UARTist, its command line and
 its MCP server, and what to ask you first — at the same version as the app.
+`--allow-remote=all` lets npm 12 and later fetch a package from a URL (they
+refuse by default; earlier npm ignores the flag). On Windows, if PowerShell says
+*running scripts is disabled*, type `npx.cmd` instead of `npx`, or use
+PowerShell 7 or the Command Prompt.
 
 ## Each release has
 
