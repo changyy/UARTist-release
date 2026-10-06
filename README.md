@@ -25,6 +25,26 @@ or `UARTist-arm64.dmg` from the
 open it and drag UARTist into Applications. UARTist is not notarized yet, so
 the first time choose *System Settings → Privacy & Security → Open Anyway*.
 
+**Linux (Ubuntu 22.04 or later, Debian, Fedora — x86_64 and arm64)** — one
+line, for your account only, no `sudo`: it checks the download's SHA-256, puts
+UARTist in `~/.local` and the app menu, and prints (without running them) the
+steps that need an administrator:
+
+```sh
+curl -fsSL https://uartist.app/install.sh | sh
+```
+
+or the system's package manager, which also brings in WebKit2GTK:
+
+```sh
+sudo apt install ./UARTist-linux-amd64.deb     # Ubuntu, Debian (arm64: UARTist-linux-arm64.deb)
+sudo dnf install ./UARTist-linux-x86_64.rpm    # Fedora (arm64: UARTist-linux-aarch64.rpm)
+```
+
+or the portable `UARTist-linux-x86_64.tar.gz` (`aarch64`): unpack it anywhere
+and run `UARTist/UARTist`. To open serial ports, your account needs the
+`dialout` group, once: `sudo usermod -aG dialout $USER`, then log out and in.
+
 **Windows 10 / 11** — the
 [Microsoft Store](https://apps.microsoft.com/detail/9MTZSLT89V5X), or:
 
@@ -59,9 +79,17 @@ PowerShell 7 or the Command Prompt.
 | `UARTist-arm64.dmg`, `UARTist-arm64.dmg.sha256` | the same dmg under a name that does not change, and its SHA-256 |
 | `UARTist-<version>-windows-x64.zip` | the portable Windows app |
 | `UARTist-windows-x64.zip`, `UARTist-windows-x64.zip.sha256` | the same zip under a name that does not change, and its SHA-256 |
-| `install-mac.sh` | the one-line installer |
+| `UARTist-<version>-linux-<arch>.tar.gz`, `.deb`, `.rpm` | the Linux app: portable, and as packages (x86_64 / amd64, aarch64 / arm64) |
+| `UARTist-linux-…`, each with a `.sha256` | the same under names that do not change, and their SHA-256 |
+| `install.sh`, `install-mac.sh`, `install-linux.sh` | the one-line installer, and the one it runs for macOS or Linux |
 | `THIRD_PARTY_NOTICES.md` | the open-source components inside the app, and their licenses |
 | `uartist-skill.tgz`, `uartist-claude-skill.zip` | the Claude Code skill for this version (npx package, or the folder to unzip) |
+
+## License
+
+UARTist is free to use under the MIT license, which comes with every build.
+Its source code is not published. The open-source components it carries, and
+their licenses, are in `THIRD_PARTY_NOTICES.md`.
 
 ## Problems, questions, ideas
 
